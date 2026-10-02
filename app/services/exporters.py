@@ -2,6 +2,17 @@ from fpdf import FPDF
 import os
 import time
 
+def clean_text(text):
+    replacements = {
+        "\u2019": "'", "\u2018": "'",
+        "\u201c": '"', "\u201d": '"',
+        "\u2013": "-", "\u2014": "-",
+        "\u2026": "...",
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+    return text.encode("latin-1", "replace").decode("latin-1")
+
 def save_pdf(layout):
     pdf = FPDF()
 
