@@ -1,0 +1,6 @@
+.env
+env/
+__pycache__/
+node_modules/
+   app/static/panels/*
+   app/static/exports/*

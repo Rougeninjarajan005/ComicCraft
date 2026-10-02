@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Comic Preview</title>
+</head>
+<body>
+
+<h1>Your Comic</h1>
+
+{% for panel in layout %}
+    <h2>{{ panel.title }}</h2>
+    <img src="{{ panel.image }}" width="300">
+    <p><i>{{ panel.description }}</i></p>
+{% endfor %}
+
+<a href="{{ pdf }}">Download PDF</a>
+
+</body>
+</html>
