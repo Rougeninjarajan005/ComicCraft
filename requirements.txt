@@ -10,3 +10,4 @@ Pillow
 fpdf
 python-dotenv
 accelerate
+   google-genai
