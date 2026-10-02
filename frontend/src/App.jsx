@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -39,7 +41,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/generate-comic/json",
+          `${API_URL}/generate-comic/json`,
         {
           method: "POST",
           headers: {
@@ -64,7 +66,7 @@ function App() {
       setGeneratedLayout(data.layout || []);
 
       if (data.pdf) {
-        setPdfUrl(`http://127.0.0.1:8000${data.pdf}`);
+          setPdfUrl(`${API_URL}${data.pdf}`);
       }
 
       setCurrentStep(5);
@@ -416,7 +418,7 @@ function App() {
                       </div>
 
                       <img
-                        src={`http://127.0.0.1:8000${panel.image}`}
+                        src={`${API_URL}${panel.image}`}
                         alt={panel.title}
                       />
 
@@ -488,7 +490,7 @@ function App() {
                     >
 
                       <img
-                        src={`http://127.0.0.1:8000${panel.image}`}
+                        src={`${API_URL}${panel.image}`}
                         alt={panel.title}
                       />
 
