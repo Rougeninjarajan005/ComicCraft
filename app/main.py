@@ -7,6 +7,15 @@ from app.routes import router
 
 app = FastAPI()
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # Allow React frontend to communicate with FastAPI
 app.add_middleware(
     CORSMiddleware,
