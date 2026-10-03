@@ -2,12 +2,8 @@ fastapi
 uvicorn
 jinja2
 python-multipart
-google-generativeai
-diffusers
-transformers
-torch
 Pillow
 fpdf
 python-dotenv
-accelerate
-   google-genai
+google-genai
+   huggingface_hub
