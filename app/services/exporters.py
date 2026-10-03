@@ -21,12 +21,12 @@ def save_pdf(layout):
 
         pdf.set_font("Arial", size=12)
 
-        pdf.cell(200, 10, txt=panel["title"], ln=True)
+        pdf.cell(200, 10, txt=clean_text(panel["title"]), ln=True)
 
         img_path = "app" + panel["image"]
         pdf.image(img_path, w=100)
 
-        pdf.multi_cell(0, 10, panel["description"])
+        pdf.multi_cell(0, 10, clean_text(panel["description"]))
 
     filename = f"comic_{int(time.time())}.pdf"
     path = f"app/static/exports/{filename}"
